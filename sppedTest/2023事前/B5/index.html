@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+
+</html>
+<style>
+    .flex {
+        width: 250px;
+        height: 80px;
+        border: 1px solid black;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .circle {
+        border-radius: 50%;
+        border: 1px solid black;
+        opacity: .2;
+        width: 60px;
+        height: 60px;
+    }
+
+    .circle:nth-of-type(1) {
+        background-color: green;
+        animation: g 8s infinite;
+    }
+
+    .circle:nth-of-type(2) {
+        background-color: yellow;
+        animation: y 8s infinite;
+    }
+
+    .circle:nth-of-type(3) {
+        background-color: red;
+        animation: r 8s infinite;
+    }
+
+    @keyframes g {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        50.1% {
+            opacity: .2;
+        }
+
+        100% {
+            opacity: .2;
+        }
+    }
+
+    @keyframes y {
+        0% {
+            opacity: .2;
+        }
+
+        50% {
+            opacity: .2;
+        }
+
+        50.1% {
+            opacity: 1;
+        }
+
+        62.5% {
+            opacity: 1;
+        }
+
+        62.6% {
+            opacity: .2;
+        }
+
+        100% {
+            opacity: .2;
+        }
+    }
+
+    @keyframes r {
+        0% {
+            opacity: .2;
+        }
+
+        62.5% {
+            opacity: .2;
+        }
+
+        62.6% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>

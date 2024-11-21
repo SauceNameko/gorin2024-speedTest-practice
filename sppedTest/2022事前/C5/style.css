@@ -1,0 +1,65 @@
+body {
+    color: #333;
+    margin: 0;
+}
+
+#list {
+    border-collapse: collapse;
+    margin: 100px auto 0;
+}
+
+th, td {
+    border: solid 1px #ccc;
+    padding: .8em;
+}
+
+th {
+    background: #666;
+    color: #fff;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+tr:last-of-type td {
+    border: 0;
+    text-align: center;
+}
+
+input {
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+#average {
+    background: #eee;
+    pointer-events: none;
+    text-align: right;
+    width: 3em;
+}
+
+button {
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 100px;
+    padding: 1em;
+}
+
+.add {
+    background: #1f62c7;
+}
+
+.add:hover {
+    background: #123a77;
+}
+
+.delete {
+    background: #aa3737;
+}
+
+.delete:hover {
+    background: #702525;
+}

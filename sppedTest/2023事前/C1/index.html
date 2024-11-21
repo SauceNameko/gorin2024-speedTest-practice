@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>fjwaioefj.wal,fncmｑｐ２ｗ９ｆｊ</p>
+    <p>bmalkfgjawpoerfjawfjwapofjawfpaos;fjcmapoweja</p>
+    <input type="text" name="" id="">
+    <button>検索</button>
+</body>
+
+</html>
+<script>
+    const btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+        const input = document.querySelector("input");
+        const value = input.value;
+        const ps = document.querySelectorAll("p");
+        ps.forEach(p => {
+            const reg = new RegExp(value, "g");
+            const replace = p.textContent.replace(reg, `<span>${value}</span>`);
+            p.innerHTML = replace;
+        });
+        const spans = document.querySelectorAll("span");
+        spans.forEach(span => {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            span.style.backgroundColor = `rgb(${r},${g},${b})`
+        })
+    });
+</script>

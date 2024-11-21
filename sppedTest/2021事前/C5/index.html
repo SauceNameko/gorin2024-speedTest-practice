@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>C2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>point</th>
+                <th>average : <input type="text" id="average"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" name="name" value="John Chapman" >
+                </td>
+                <td>
+                    <input type="number" name="point" value="" data-group="point" min="0" class="calc">
+                </td>
+                <td><button class="delete">削除</button></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button class="add">追加</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>

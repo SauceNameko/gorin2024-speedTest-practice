@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="circle">
+        <div class="text">40%</div>
+        <div class="text">60%</div>
+    </div>
+</body>
+
+</html>
+<style>
+    .circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: conic-gradient(black 0% 40%, gray 40% 100%);
+        color: white;
+        position: relative;
+    }
+
+    .text:nth-of-type(1) {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+    }
+    .text:nth-of-type(2) {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+    }
+</style>

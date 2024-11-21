@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="400" height="400"></canvas>
+    <button class="red">red</button>
+    <button class="blue">blue</button>
+    <button class="yellow">yellow</button>
+</body>
+
+</html>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    const btns = document.querySelectorAll("button");
+    let flag = false;
+    let color = "black";
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            color = btn.className;
+        })
+    });
+    canvas.addEventListener("mouseup", () => {
+        flag = false;
+    })
+    canvas.addEventListener("mousedown", (e) => {
+        flag = true;
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = color;
+        ctx.moveTo(e.offsetX, e.offsetY);
+    })
+    canvas.addEventListener("mousemove", (e) => {
+        if (flag) {
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        }
+    })
+</script>

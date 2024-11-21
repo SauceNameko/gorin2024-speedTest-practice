@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="watch">
+        <div class="border"></div>
+    </div>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <button class="reset">reset</button>
+</body>
+
+</html>
+<style>
+    #watch {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+    }
+
+    .border {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -100%;
+        width: 2px;
+        height: 200px;
+        transform-origin: bottom;
+        background-color: lightcoral;
+    }
+</style>
+
+<script>
+    const border = document.querySelector(".border");
+    const btns = document.querySelectorAll("button");
+    let interval = 0;
+    let time = 0;
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (btn.className == "start") {
+                interval = setInterval(() => {
+                    time += 6;
+                    border.style.transform = `rotate(${time}deg)`;
+                }, 1000);
+            } else if (btn.className == "stop") {
+                clearInterval(interval);
+            } else {
+                time = 0;
+                border.style.transform = `rotate(${0}deg)`;
+                clearInterval(interval);
+            }
+        })
+    })
+</script>

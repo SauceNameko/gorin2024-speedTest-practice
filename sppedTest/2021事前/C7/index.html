@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFbK0MtZUTUf71Tvm85iaTM5ZPDMYT1J52xQ&s" alt="">
+    </div>
+    <div class="b">
+        <img src="https://picture1.goo-net.com/7001001803/30211114/J/70010018033021111400400.jpg" alt="">
+    </div>
+    <div class="c">
+        <img src="https://www.carsensor.net/contents/article_images/_67491/001n.jpg" alt="">
+    </div>
+</body>
+
+</html>
+<style>
+    .a {
+        display: inline-block;
+        position: relative;
+    }
+
+    .a::after {
+        position: absolute;
+        content: "A";
+        color: rgb(0, 255, 132);
+        left: 50%;
+        top: 50%;
+        display: none;
+    }
+
+    .a:hover::after {
+        display: block;
+    }
+
+    .b {
+        display: inline-block;
+        position: relative;
+    }
+
+    .b::after {
+        position: absolute;
+        content: "B";
+        color: rgb(0, 255, 132);
+        left: 50%;
+        top: 50%;
+        display: none;
+    }
+
+    .b:hover::after {
+        display: block;
+    }
+
+    .c {
+        display: inline-block;
+        position: relative;
+    }
+
+    .c::after {
+        position: absolute;
+        content: "C";
+        color: rgb(0, 255, 132);
+        left: 50%;
+        top: 50%;
+        display: none;
+    }
+
+    .c:hover::after {
+        display: block;
+    }
+</style>

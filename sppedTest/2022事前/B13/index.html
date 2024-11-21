@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="scr">
+        <section>セクション01</section>
+        <section>セクション02</section>
+        <section>セクション03</section>
+    </div>
+</body>
+
+</html>
+<style>
+    .scr {
+        width: 100%;
+        height: 100vh;
+        scroll-snap-type: y mandatory;
+        overflow-y: auto;
+    }
+
+    section {
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: start;
+        background-color: lightgreen;
+        color: white;
+    }
+
+    section:nth-of-type(even) {
+        background-color: lightpink;
+    }
+</style>

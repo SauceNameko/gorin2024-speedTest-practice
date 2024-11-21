@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button class="add">Add</button>
+
+</body>
+
+</html>
+<style>
+    .text {
+        text-decoration: line-through;
+    }
+</style>
+<script>
+    const add = document.querySelector(".add");
+    add.addEventListener("click", () => {
+        const value = document.querySelector("input").value;
+        const div = document.createElement("div");
+        div.innerHTML = ` <div>
+        <span>${value}</span>
+        <button class="con">Complete</button>
+        <button class="dele">Delete</button>
+    </div>`
+        document.body.appendChild(div);
+        comple();
+        dele();
+
+    })
+    const comple = () => {
+        const date = document.querySelectorAll(".con");
+        date.forEach(da => {
+            da.addEventListener("click", () => {
+                da.closest("div").children[0].className = "text";
+            })
+        })
+    }
+    const dele = () => {
+        const date = document.querySelectorAll(".dele");
+        date.forEach(da => {
+            da.addEventListener("click", () => {
+                da.closest("div").remove();
+            })
+        })
+    }
+    comple();
+    dele();
+</script>

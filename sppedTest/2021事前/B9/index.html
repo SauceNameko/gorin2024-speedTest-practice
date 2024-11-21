@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" name="toggle" id="toggle">
+    <label for="toggle">
+        <div class="circle"></div>
+    </label>
+</body>
+
+</html>
+<style>
+    input {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        width: 250px;
+        height: 100px;
+        background-color: aqua;
+        border-radius: 40px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .circle {
+        margin: 10px;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        background-color: blue;
+    }
+
+    input:checked~label {
+        background-color: blue;
+        justify-content: end;
+    }
+
+    input:checked~label>.circle {
+        background-color: aqua;
+    }
+</style>

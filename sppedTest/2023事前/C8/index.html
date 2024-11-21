@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    for (let i = 0; i < 10; i++) {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        console.log();
+
+        const w = Math.floor(Math.random() * (window.innerWidth - 100));
+        const h = Math.floor(Math.random() * (window.innerHeight - 100));
+        const div = document.createElement("div");
+        div.className = "circle";
+        div.style.position = "absolute";
+        div.style.top = `${h}px`;
+        div.style.left = `${w}px`;
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.style.borderRadius = "50%";
+        div.style.backgroundColor = `rgb(${r},${g},${b})`;
+        document.body.appendChild(div);
+    }
+
+</script>

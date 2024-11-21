@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="red"></button>
+    <button class="blue"></button>
+    <button class="green"></button>
+    <button class="yellow"></button>
+    <button class="black"></button>
+</body>
+
+</html>
+<style>
+    .flex {
+        display: flex;
+    }
+
+    .div {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+    }
+
+    button {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        border: 2px solid gray;
+    }
+</style>
+<script>
+    for (let i = 0; i < 16; i++) {
+        const flex = document.createElement("div");
+        flex.className = "flex"
+        for (let j = 0; j < 16; j++) {
+            const div = document.createElement("div");
+            div.className = "div";
+            flex.appendChild(div);
+        }
+        document.body.appendChild(flex);
+    }
+    const btns = document.querySelectorAll("button");
+    btns.forEach(btn => {
+        btn.style.backgroundColor = btn.className;
+        btn.addEventListener("click", () => {
+            btns.forEach(data => {
+                data.style.borderColor = "gray";
+            })
+            btn.style.borderColor = "yellow";
+            const div = document.querySelectorAll(".div");
+            div.forEach(di => {
+                di.addEventListener("click", () => {
+                    di.style.backgroundColor = btn.style.backgroundColor;
+                })
+            })
+        })
+    })
+</script>

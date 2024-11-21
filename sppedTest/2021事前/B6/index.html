@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="web://html">web://html</a>
+    <a href="design://html">design://html</a>
+    <a href="https://html">https://html</a>
+</body>
+
+</html>
+<style>
+    a {
+        color: black;
+    }
+
+    a[href*="web"] {
+        color: red;
+    }
+
+    a[href*="design"] {
+        color: blue;
+    }
+</style>

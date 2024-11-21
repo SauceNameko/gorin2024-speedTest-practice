@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="circle">
+    </div>
+</body>
+
+</html>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle {
+        background-color: red;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        animation: ani 2s infinite;
+    }
+
+    @keyframes ani {
+        20% {
+            translate: 0 -100px;
+        }
+
+        50% {
+            translate: 0 -100px;
+        }
+
+        60% {
+            translate: 0 0px;
+        }
+
+        75% {
+            translate: 0 -30px;
+        }
+
+        90% {
+            translate: 0 0px;
+        }
+    }
+</style>

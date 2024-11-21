@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="400" height="300"></canvas>
+</body>
+
+</html>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    let x = 0;
+    const draw = () => {
+        ctx.fillStyle = "red"
+        ctx.fillRect(0, 0, 400, 300);
+        ctx.beginPath();
+        ctx.fillStyle = "white";
+        ctx.arc(x, 150, 10, 0, 360);
+        ctx.fill();
+        ctx.closePath();
+        x += 2;
+        requestAnimationFrame(draw)
+    }
+    draw();
+</script>

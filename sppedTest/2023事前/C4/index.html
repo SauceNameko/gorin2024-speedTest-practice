@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="300" height="300"></canvas>
+    <button class="red">red</button>
+    <button class="green">green</button>
+    <button class="blue">blue</button>
+    <button class="yellow">yellow</button>
+    <button class="black">black</button>
+    <button class="jpg">jpg</button>
+    <button class="png">png</button>
+</body>
+
+</html>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    let flag = false;
+    let color = "black";
+    canvas.addEventListener("mouseup", () => {
+        flag = false;
+    })
+    canvas.addEventListener("mousedown", (e) => {
+        flag = true;
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.moveTo(e.offsetX, e.offsetY);
+    })
+    canvas.addEventListener("mousemove", (e) => {
+        if (flag) {
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        }
+    })
+    const btns = document.querySelectorAll("button");
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            if (btn.className == "jpg") {
+                const a = document.createElement("a");
+                a.href = canvas.toDataURL("data.jpg");
+                a.download = "data.jpg"
+                a.click();
+                return;
+            } else if (btn.className == "png") {
+                const a = document.createElement("a");
+                a.href = canvas.toDataURL("data.png");
+                a.download = "data.png";
+                a.click();
+                return;
+            }
+            color = btn.className;
+        })
+    })
+</script>

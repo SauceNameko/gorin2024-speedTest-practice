@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="click">click!!</button>
+    <div class="scr">
+        <div class="model">
+            <button class="close">close</button>
+            <div>texttexttexttext</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        height: 200vh;
+    }
+
+    .click {
+        position: absolute;
+        z-index: 20;
+    }
+
+    .scr {
+        display: none;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+        background-color: gray;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .model {
+        width: 50%;
+        height: 400px;
+        background-color: white;
+
+    }
+</style>
+<script>
+    const scr = document.querySelector(".scr");
+    const but = document.querySelector(".click");
+    but.addEventListener("click", () => {
+        scr.style.display = "flex";
+        document.body.style.overflow = "hidden";
+
+    })
+    scr.addEventListener("click", (e) => {
+
+        if (e.target.className == "close" || e.target.className == "scr") {
+            console.log(4234);
+
+            scr.style.display = "none";
+            document.body.style.overflow = "";
+        }
+
+    })
+</script>

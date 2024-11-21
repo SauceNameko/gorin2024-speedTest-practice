@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <input type="text" name="" id="">
+        <button class="first">Save</button>
+        <button class="second">Save2</button>
+    </form>
+</body>
+
+</html>
+<script>
+    const btn_1 = document.querySelector(".first");
+    const btn_2 = document.querySelector(".second");
+    const input = document.querySelector("input");
+    btn_1.addEventListener("click", () => {
+        const value = input.value;
+        const blob = new Blob([value], { type: "text" });
+        const a = document.createElement("a")
+        a.href = URL.createObjectURL(blob);
+        a.download = "myText.txt";
+        a.click();
+    })
+    //json
+    btn_2.addEventListener("click", () => {
+        const value = input.value;
+        const blob = new Blob([JSON.stringify(value)], { type: "application/json" });
+        const a = document.createElement("a")
+        a.href = URL.createObjectURL(blob);
+        a.download = "myText.json";
+        a.click();
+    })
+</script>
