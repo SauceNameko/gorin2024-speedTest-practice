@@ -1,0 +1,35 @@
+div {
+    width: 200px;
+    height: 200px;
+    animation: ani 2s infinite;
+    background-color: blue;
+}
+
+@keyframes ani {
+    0% {
+        background-color: blue;
+        clip-path: none;
+        border-radius: 0%;
+    }
+
+    33% {
+        border-radius: 0%;
+        background-color: yellow;
+        clip-path: polygon(50% 0%, 100% 100%, 0 100%, 0 100%);
+    }
+
+    60% {
+        border-radius: 50%;
+
+    }
+
+    66% {
+        background-color: red;
+        clip-path: none;
+        border-radius: 50%;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
