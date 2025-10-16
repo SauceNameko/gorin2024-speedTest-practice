@@ -1,0 +1,14 @@
+.flex {
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex>div {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
